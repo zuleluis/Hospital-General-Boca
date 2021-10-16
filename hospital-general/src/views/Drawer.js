@@ -10,10 +10,19 @@ import {
   ListItemText
 } from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   list: {
     width: 250
+  },
+  img: {
+    marginRight: 30,
+    width: 25,
+  },
+  enlace: {
+    textDecoration: "none",
+    color: "black",
   }
 });
 
@@ -38,21 +47,30 @@ function TemporaryDrawer(props) {
       onKeyDown={toggleDrawer(false)}
     >
        <List>
-        <ListItem button key="pacientes">
-          <ListItemText primary="Pacientes"/>
-        </ListItem>
+         <Link className={classes.enlace} to="/pacientes">
+          <ListItem button key="pacientes">
+            <img className={classes.img} alt="ico-pacientes" src="/img/paciente.svg" />
+            <ListItemText primary="Pacientes"/>
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <List>
-        <ListItem button key="doctor">
-          <ListItemText primary="Doctores"/>
-        </ListItem>
+        <Link className={classes.enlace} to="/doctores">
+          <ListItem button key="doctor">
+          <img className={classes.img} alt="ico-medicos" src="/img/medico.svg" />
+            <ListItemText primary="Doctores"/>
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <List>
-        <ListItem button key="enfermera">
-          <ListItemText primary="Enfermeras"/>
-        </ListItem>
+        <Link className={classes.enlace} to="/enfermeras">
+          <ListItem button key="enfermera">
+            <img className={classes.img} width="25" alt="ico-enfermeras" src="/img/enfermera.svg" />
+            <ListItemText primary="Enfermeras"/>
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <List>
