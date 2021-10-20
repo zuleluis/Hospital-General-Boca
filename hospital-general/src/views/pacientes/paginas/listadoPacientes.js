@@ -92,7 +92,7 @@ export default function ListadoPacientes() {
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
+    setRowsPerPage(parseInt(event.target.value, 4));
     setPage(0);
   };
 
