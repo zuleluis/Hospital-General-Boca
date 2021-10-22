@@ -1,13 +1,12 @@
 {
   "name": "hospital-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend para proyecto Hospital General de Boca del Rio",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Zulema Luis",
   "license": "ISC",
   "dependencies": {

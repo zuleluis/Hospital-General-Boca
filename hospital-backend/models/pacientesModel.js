@@ -3,34 +3,39 @@ import db from "../config/database.js";
  
 const { DataTypes } = Sequelize;
  
-const Paciente = db.define('pacientes',{
-    noExpediente:{
+const Pacientes = db.define('Pacientes',{
+    NoExpediente:{
         type: DataTypes.INTEGER
     },
-    nombre:{
+    Nombre:{
         type: DataTypes.STRING
     },
-    apellidos:{
+    Apellidos:{
         type: DataTypes.STRING
     },
-    fechaNac:{
+    FechaNacimiento:{
         type: DataTypes.DATE
     },
-    sexo:{
+    Sexo:{
         type: DataTypes.INTEGER
     },
-    idEscolaridad:{
+    IdEscolaridad:{
         type: DataTypes.INTEGER
     },
-    idOcupacion:{
+    IdOcupacion:{
         type: DataTypes.INTEGER
     },
-    idReligion:{
+    IdReligion:{
         type: DataTypes.INTEGER
     },
-    
+    createdAt:{
+        type: DataTypes.DATE
+    },
+    updatedAt:{
+        type: DataTypes.DATE
+    },
 },{
     freezeTableName: true
 });
  
-export default Paciente;
+export default Pacientes;

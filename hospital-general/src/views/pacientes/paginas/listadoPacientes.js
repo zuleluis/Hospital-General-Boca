@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ListadoPacientes() {
   const classes = useStyles();
   const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('noexpediente');
+  const [orderBy, setOrderBy] = React.useState('NoExpediente');
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [search, setSearch] = React.useState('');  
@@ -76,7 +76,6 @@ export default function ListadoPacientes() {
         console.log(err);
       });
   },[]);
-
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -142,7 +141,7 @@ export default function ListadoPacientes() {
                   return (
                     <TableRow
                       hover tabIndex={-1}
-                      key={row.noexpediente}
+                      key={row.NoExpediente}
                       className={classes.row}
                       component={Link} to="pacientes/idpaciente"
                     >

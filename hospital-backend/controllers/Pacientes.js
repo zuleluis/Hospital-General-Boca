@@ -1,6 +1,6 @@
 import Paciente from "../models/pacientesModel.js";
  
-export const listaPacientes = async (req, res) => {
+export const obtenerPacientes = async (req, res) => {
     try {
         const pacientes = await Paciente.findAll();
         res.json(pacientes);
@@ -9,11 +9,11 @@ export const listaPacientes = async (req, res) => {
     }  
 }
  
-export const obtenerPaciente = async (req, res) => {
+export const buscarPaciente = async (req, res) => {
     try {
         const paciente = await Paciente.findAll({
             where: {
-                noExpediente: req.params.noExpediente
+                noExpediente: req.params.NoExpediente
             }
         });
         res.json(paciente[0]);

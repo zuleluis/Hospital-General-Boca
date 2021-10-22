@@ -1,6 +1,6 @@
 import express from "express";
-import db from "./src/config/database.js";
-import pacientesRoutes from "./src/routes/index.js";
+import db from "./config/database.js";
+import pacientesRoutes from "./routes/index.js";
 import cors from "cors";
  
 const app = express();
