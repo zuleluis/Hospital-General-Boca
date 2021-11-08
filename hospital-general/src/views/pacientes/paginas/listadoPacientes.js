@@ -17,12 +17,19 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const headCells = [
-  { id: 'noexpediente', numeric: false, label: 'No. de expediente' },
-  { id: 'nombre', numeric: false, label: 'Nombre(s)' },
-  { id: 'apellido', numeric: false, label: 'Apellidos' },
-  { id: 'edad', numeric: true, label: 'Edad' },
-  { id: 'sexo', numeric: false, label: 'Sexo' },
+  { id: 'NoExpediente', numeric: false, label: 'No. de expediente' },
+  { id: 'Nombre', numeric: false, label: 'Nombre(s)' },
+  { id: 'Apellidos', numeric: false, label: 'Apellidos' },
+  { id: 'FechaNacimiento', numeric: true, label: 'Edad' },
+  { id: 'Sexo', numeric: false, label: 'Sexo' },
 ];
+
+const getAge = (d1)  => {
+  d1 = new Date(d1.slice(0,10))
+  const d2 = new Date();
+  const diff = d2.getTime() - d1.getTime();
+  return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -150,8 +157,8 @@ export default function ListadoPacientes() {
                         </TableCell>
                         <TableCell >{row.Nombre}</TableCell>
                         <TableCell >{row.Apellidos}</TableCell>
-                        <TableCell align="right">{row.Edad}</TableCell>
-                        <TableCell >{row.Sexo}</TableCell>
+                        <TableCell align="right">{getAge(row.FechaNacimiento)} Años</TableCell>
+                        <TableCell >{row.Sexo === 1 ? "Varón" : "Mujer"}</TableCell>
                     </TableRow>
                   );
                 })}
