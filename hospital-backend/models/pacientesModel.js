@@ -27,13 +27,7 @@ const Pacientes = db.define('Pacientes',{
     },
     IdReligion:{
         type: DataTypes.INTEGER
-    },
-    createdAt:{
-        type: DataTypes.DATE
-    },
-    updatedAt:{
-        type: DataTypes.DATE
-    },
+    }
 },{
     freezeTableName: true
 });
