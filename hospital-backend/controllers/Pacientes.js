@@ -15,7 +15,7 @@ export const Pacientes = {
         try {
             const paciente = await Paciente.findAll({
                 where: {
-                    noExpediente: req.params.NoExpediente
+                    NoExpediente: req.params.NoExpediente
                 }
             });
             res.json(paciente[0]);

@@ -24,7 +24,7 @@ const headCells = [
   { id: 'Sexo', numeric: false, label: 'Sexo' },
 ];
 
-const getAge = (d1)  => {
+const getAge = (d1) => {
   d1 = new Date(d1.slice(0,10))
   const d2 = new Date();
   const diff = d2.getTime() - d1.getTime();
@@ -68,7 +68,6 @@ export default function ListadoPacientes() {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [search, setSearch] = React.useState('');  
-  
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
@@ -83,6 +82,8 @@ export default function ListadoPacientes() {
         console.log(err);
       });
   },[]);
+
+
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -113,6 +114,7 @@ export default function ListadoPacientes() {
     setPacientes([]);
     setSearch("");
   }
+
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, pacientes.length - page * rowsPerPage);
 

@@ -36,7 +36,7 @@ function Pacientes() {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>Historia Clinica</Typography>
+            <Typography className={classes.heading}>Historia Clínica</Typography>
           </AccordionSummary>
           <HistoriaClinica/>
         </Accordion>
@@ -60,7 +60,7 @@ function Pacientes() {
             aria-controls="panel3a-content"
             id="panel3a-header"
           >
-            <Typography className={classes.heading}>Carta de consetimiento</Typography>
+            <Typography className={classes.heading}>Carta de consentimiento</Typography>
           </AccordionSummary>
           <CartaConsentimiento/>
         </Accordion>
@@ -96,7 +96,7 @@ function Pacientes() {
           aria-controls="panel6a-content"
           id="panel6a-header"
         >
-          <Typography className={classes.heading}>Solicitud de examenes de laboratorio</Typography>
+          <Typography className={classes.heading}>Solicitud de exámenes de laboratorio</Typography>
         </AccordionSummary>
         <ExamenLaboratorio/>
       </Accordion>

@@ -8,6 +8,13 @@ function descendingComparator (a, b, orderBy) {
   return 0;
 }
 
+const getAge = (d1) => {
+  d1 = new Date(d1.slice(0,10))
+  const d2 = new Date();
+  const diff = d2.getTime() - d1.getTime();
+  return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+}
+
 const funcTable = { 
   getComparator: (order, orderBy) => {
     return order === 'desc'
@@ -26,10 +33,10 @@ const funcTable = {
   searchTable: (array, search) => {
 
     const expedienteFilter = array.filter(element => {
-      return element.noexpediente.toString().indexOf(search) !== -1 ||
-        element.nombre.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
-        element.apellido.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
-        element.edad.toString().indexOf(search) !== -1;
+      return element.NoExpediente.toString().indexOf(search) !== -1 ||
+        element.Nombre.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+        element.Apellidos.toLowerCase().indexOf(search.toLowerCase()) !== -1 ||
+        getAge(element.FechaNacimiento).toString().indexOf(search) !== -1;
     });
 
     return expedienteFilter;
